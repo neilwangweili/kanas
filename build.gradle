@@ -1,5 +1,5 @@
 apply from: "$rootDir/gradle/config/scripts/root.gradle"
 
 dependencies {
-    implementation project(":modules.test.domain")
+    implementation project(":modules.test.gateways")
 }
