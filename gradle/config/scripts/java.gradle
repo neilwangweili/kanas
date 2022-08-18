@@ -10,6 +10,7 @@ repositories {
 dependencies {
     implementation libs.general.guava
     implementation libs.general.commons.lang3
+    implementation libs.general.annotation
     testImplementation libs.test.junit.jupiter
     testImplementation libs.test.junit.jupiter.api
     testImplementation libs.test.junit.jupiter.engine
