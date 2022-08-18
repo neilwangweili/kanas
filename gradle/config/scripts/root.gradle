@@ -1,0 +1,13 @@
+group = 'com.github.vwwl.kanas'
+version = '1.0.0'
+
+allprojects {
+    apply from: "$rootDir/gradle/config/scripts/library.gradle"
+    apply from: "$rootDir/gradle/config/scripts/junit.gradle"
+    apply from: "$rootDir/gradle/config/scripts/style.gradle"
+    apply from: "$rootDir/gradle/config/scripts/coverage.gradle"
+    apply from: "$rootDir/gradle/config/scripts/style-ignored.gradle"
+}
+
+apply from: "$rootDir/gradle/config/scripts/coverage-all.gradle"
+apply from: "./coverage.gradle"

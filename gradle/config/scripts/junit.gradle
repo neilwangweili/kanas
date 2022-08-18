@@ -1,0 +1,11 @@
+dependencies {
+    testImplementation libs.test.junit.jupiter
+    testImplementation libs.test.junit.jupiter.api
+    testImplementation libs.test.junit.jupiter.engine
+    testImplementation libs.test.assertj.core
+    testImplementation libs.test.mockito.junit.jupiter
+}
+
+test {
+    useJUnitPlatform()
+}

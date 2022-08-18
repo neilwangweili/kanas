@@ -1,0 +1,3 @@
+project.coverage.excludes = [
+    'com/github/vwwl/kanas/KanasApplication.class'
+]
