@@ -1,3 +1,5 @@
 dependencies {
     api project(":modules.test.domain")
+    implementation libs.spring.boot.web
+    implementation libs.test.spring.boot.test
 }

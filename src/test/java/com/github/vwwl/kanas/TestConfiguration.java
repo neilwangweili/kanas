@@ -1,4 +1,4 @@
-package com.github.vwwl.kanas.test.config;
+package com.github.vwwl.kanas;
 
 import org.springframework.context.annotation.Configuration;
 
