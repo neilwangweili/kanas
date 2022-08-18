@@ -3,6 +3,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+.idea
+!.idea/codeStyles/**
+!.idea/dictionaries/**
+!.idea/inspectionProfiles/**
 
 ### STS ###
 .apt_generated
