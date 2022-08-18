@@ -1,4 +1,4 @@
-package com.github.vwwl.kanas.test.domain;
+package com.github.vwwl.kanas.test.acl;
 
 import org.junit.jupiter.api.Test;
 
