@@ -13,7 +13,7 @@ public class SpringTestRestTemplate implements TestRestTemplate {
 
     private @Resource org.springframework.boot.test.web.client.TestRestTemplate impl;
 
-    public <Body> RequestEntity<Body> buildRequest(String url, Body body, HttpMethod httpMethod, Object... vars) {
+    public <Body> RequestEntity<Body> buildRequest(final String url, final Body body, final HttpMethod httpMethod, final Object... vars) {
         URI uri = UriComponentsBuilder.fromUriString(url).buildAndExpand(vars).encode().toUri();
         return new RequestEntity<>(body, new HttpHeaders(), httpMethod, uri);
     }
