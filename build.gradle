@@ -1,8 +1,5 @@
 apply from: "$rootDir/gradle/config/scripts/root.gradle"
 
 dependencies {
-    implementation libs.spring.boot.web
-    implementation libs.spring.context
-    testImplementation libs.test.spring.boot.test
-    annotationProcessor libs.spring.boot.configuration.processor
+    implementation project(":modules.test.domain")
 }

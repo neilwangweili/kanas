@@ -11,3 +11,10 @@ allprojects {
 
 apply from: "$rootDir/gradle/config/scripts/coverage-all.gradle"
 apply from: "./coverage.gradle"
+
+dependencies {
+    implementation libs.spring.boot.web
+    implementation libs.spring.context
+    testImplementation libs.test.spring.boot.test
+    annotationProcessor libs.spring.boot.configuration.processor
+}
