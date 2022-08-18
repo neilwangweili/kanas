@@ -10,7 +10,3 @@ def includeModule(File path, String prefix = "") {
 file("modules").eachDir {
     includeModule(it, "modules.")
 }
-
-file("frameworks").eachDir {
-    includeModule(it, "frameworks.")
-}
