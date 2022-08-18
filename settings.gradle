@@ -1,0 +1,16 @@
+rootProject.name = 'kanas'
+
+def includeModule(File path, String prefix = "") {
+    include path.name
+    def descriptor = project(":${path.name}")
+    descriptor.projectDir = path
+    descriptor.name = (prefix + descriptor.name)
+}
+
+file("modules").eachDir {
+    includeModule(it, "modules.")
+}
+
+file("frameworks").eachDir {
+    includeModule(it, "frameworks.")
+}
