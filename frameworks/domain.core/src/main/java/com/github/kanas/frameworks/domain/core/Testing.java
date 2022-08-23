@@ -16,7 +16,7 @@ public final class Testing<Content> {
 
     @SuppressWarnings("unchecked")
     public <Field> @Nullable Field get(@NotNull final String fieldName) {
-        java.lang.reflect.Field field = Exceptions.evaluate(() -> content.getClass().getDeclaredField(fieldName));
+        var field = Exceptions.evaluate(() -> content.getClass().getDeclaredField(fieldName));
         field.setAccessible(true);
         return (Field) Exceptions.evaluate(() -> field.get(content));
     }
