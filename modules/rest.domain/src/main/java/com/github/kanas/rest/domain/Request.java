@@ -8,7 +8,7 @@ public interface Request {
         return new RestfulRequest();
     }
 
-    @NotNull Request path(@NotNull String path);
+    @NotNull Request host(@NotNull String path);
 
     @NotNull Request port(@NotNull Integer port);
 

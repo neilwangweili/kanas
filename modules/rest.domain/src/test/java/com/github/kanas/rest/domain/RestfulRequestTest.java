@@ -6,7 +6,7 @@ import static com.github.kanas.frameworks.domain.core.Testing.by;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RestfulTest {
+class RestfulRequestTest {
 
     @Test
     void should_build_request_entity() {
@@ -14,9 +14,9 @@ class RestfulTest {
     }
 
     @Test
-    void should_build_request_entity_with_path() {
-        Request request = Request.build().path("https://kanas");
-        assertEquals("https://kanas", by(request).get("path"));
+    void should_build_request_entity_with_host() {
+        Request request = Request.build().host("https://kanas");
+        assertEquals("https://kanas", by(request).get("host"));
     }
 
     @Test

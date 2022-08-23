@@ -4,15 +4,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class RestfulRequest implements Request {
 
-    private String path;
+    private String host;
     private Integer port;
 
     RestfulRequest() {
     }
 
     @Override
-    public @NotNull Request path(@NotNull final String path) {
-        this.path = path;
+    public @NotNull Request host(@NotNull final String host) {
+        this.host = host;
         return this;
     }
 
