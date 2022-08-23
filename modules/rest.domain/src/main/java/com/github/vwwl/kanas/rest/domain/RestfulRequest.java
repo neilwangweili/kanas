@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 public final class RestfulRequest implements Request {
 
     private String path;
+    private Integer port;
 
     private RestfulRequest() {
     }
@@ -16,6 +17,12 @@ public final class RestfulRequest implements Request {
     @Override
     public @NotNull Request path(@NotNull final String path) {
         this.path = path;
+        return this;
+    }
+
+    @Override
+    public @NotNull Request port(@NotNull Integer port) {
+        this.port = port;
         return this;
     }
 

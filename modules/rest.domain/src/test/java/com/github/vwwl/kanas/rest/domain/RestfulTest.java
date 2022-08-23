@@ -17,4 +17,9 @@ class RestfulTest {
         assertThat(build().path("https://kanas")).isInstanceOf(Request.class);
     }
 
+    @Test
+    void should_build_request_entity_with_port() {
+        assertThat(build().port(8080)).isInstanceOf(Request.class);
+    }
+
 }
