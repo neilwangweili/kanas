@@ -15,13 +15,13 @@ class RestfulRequestTest {
 
     @Test
     void should_build_request_entity_with_host() {
-        Request request = Request.build().host("https://kanas");
+        var request = Request.build().host("https://kanas");
         assertEquals("https://kanas", by(request).get("host"));
     }
 
     @Test
     void should_build_request_entity_with_port() {
-        Request request = Request.build().port(8080);
+        var request = Request.build().port(8080);
         assertEquals(8080, by(request).<Integer>get("port"));
     }
 
