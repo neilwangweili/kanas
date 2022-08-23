@@ -2,4 +2,5 @@ apply from: "$rootDir/gradle/config/scripts/root.gradle"
 
 dependencies {
     implementation project(":modules.test.acl")
+    implementation project(":modules.rest.domain")
 }
