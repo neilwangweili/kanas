@@ -17,7 +17,7 @@ public class RestfulRequest implements Request {
     }
 
     @Override
-    public @NotNull Request port(@NotNull Integer port) {
+    public @NotNull Request port(@NotNull final Integer port) {
         this.port = port;
         return this;
     }
