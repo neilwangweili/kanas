@@ -2,6 +2,7 @@
 general-guava = "31.0.1-jre"
 general-commons-lang3 = "3.9"
 general-annotation = "20.1.0"
+general-http-client = "2.7.0"
 test-junit = "5.8.2"
 test-assertj = "3.21.0"
 test-mockito = "4.0.0"
@@ -10,6 +11,7 @@ test-mockito = "4.0.0"
 general-guava = { module = "com.google.guava:guava", version.ref = "general-guava" }
 general-commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "general-commons-lang3" }
 general-annotation = { module = "org.jetbrains:annotations", version.ref = "general-annotation" }
+general-http-client = { module = "org.apache.httpcomponents:httpclient", version.ref = "general-http-client" }
 test-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "test-junit" }
 test-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "test-junit" }
 test-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "test-junit" }
