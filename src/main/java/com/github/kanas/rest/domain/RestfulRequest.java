@@ -6,6 +6,7 @@ public class RestfulRequest implements Request {
 
     private String host;
     private Integer port;
+    private String path;
 
     RestfulRequest() {
     }
@@ -19,6 +20,12 @@ public class RestfulRequest implements Request {
     @Override
     public @NotNull Request port(@NotNull final Integer port) {
         this.port = port;
+        return this;
+    }
+
+    @Override
+    public @NotNull Request path(@NotNull final String path) {
+        this.path = path;
         return this;
     }
 

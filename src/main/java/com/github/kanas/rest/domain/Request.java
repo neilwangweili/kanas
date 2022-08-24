@@ -12,4 +12,6 @@ public interface Request {
 
     @NotNull Request port(@NotNull Integer port);
 
+    @NotNull Request path(@NotNull String path);
+
 }

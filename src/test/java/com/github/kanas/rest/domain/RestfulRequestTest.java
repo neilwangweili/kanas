@@ -25,4 +25,10 @@ class RestfulRequestTest {
         assertEquals(8080, by(request).<Integer>get("port"));
     }
 
+    @Test
+    void should_build_request_entity_with_path() {
+        Request request = Request.build().path("/access-token");
+        assertEquals("/access-token", by(request).<String>get("path"));
+    }
+
 }
