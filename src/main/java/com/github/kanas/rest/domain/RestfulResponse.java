@@ -8,4 +8,9 @@ public class RestfulResponse implements Response {
         this.content = content;
     }
 
+    @Override
+    public ResponseValue body(String jsonPath) {
+        return new ResponseValue(content, jsonPath);
+    }
+
 }
