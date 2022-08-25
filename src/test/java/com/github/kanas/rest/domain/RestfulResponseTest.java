@@ -22,7 +22,7 @@ class RestfulResponseTest {
         @Test
         void should_get_response_value_when_giving_response_path() {
             RestfulResponse response = new RestfulResponse("{\"name\":\"Neil\"}");
-            assertEquals("Neil", response.body("$.name").get());
+            assertEquals("Neil", by(response.body("$.name")).get("value"));
         }
 
         @Test
@@ -44,9 +44,13 @@ class RestfulResponseTest {
     class GetRestfulResponseValueWithBuildFlowTest {
 
         @Test
-        void should_response_make_null_to_empty() {
+        void should_response_as_string_and_get() {
             RestfulResponse response = new RestfulResponse("{\"name\":\"Neil\"}");
             assertNotNull(response.body("$.name").asString().get());
+        }
+
+        @Test
+        void should_() {
         }
 
     }
