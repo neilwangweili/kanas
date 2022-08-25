@@ -1,10 +1,10 @@
 package com.github.kanas.rest.domain;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StringFlowTest {
+class FlowTest {
 
     @Test
     void should_produce_null_to_null() {
@@ -21,14 +21,19 @@ class StringFlowTest {
         assertThrows(FlowProducingException.class, () -> new ResponseValue("{\"id\":123}", "$.id").asString().get());
     }
 
-    @Test
-    void should_null_to_empty_when_nullToEmpty() {
-        assertEquals("", new ResponseValue("{}", "$.id").asString().nullToEmpty().get());
-    }
+    @Nested
+    class StringFlowTest {
 
-    @Test
-    void should_do_nothing_when_nullToEmpty() {
-        assertEquals("123", new ResponseValue("{\"id\":\"123\"}", "$.id").asString().nullToEmpty().get());
+        @Test
+        void should_null_to_empty_when_nullToEmpty() {
+            assertEquals("", new ResponseValue("{}", "$.id").asString().nullToEmpty().get());
+        }
+
+        @Test
+        void should_do_nothing_when_nullToEmpty() {
+            assertEquals("123", new ResponseValue("{\"id\":\"123\"}", "$.id").asString().nullToEmpty().get());
+        }
+
     }
 
 }
