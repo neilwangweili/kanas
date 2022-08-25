@@ -16,13 +16,13 @@ class JsonPathTest {
 
     @Test
     void should_JsonPath_parse_json() {
-        assertEquals("admin", JsonPath.create().read("{\"name\":\"admin\"}", "$.name"));
+        assertEquals("Neil", JsonPath.create().read("{\"name\":\"Neil\"}", "$.name"));
     }
 
     @SuppressWarnings("unchecked")
     @Test
     void should_JsonPath_parse_json_array() {
-        assertThat((List<String>) JsonPath.create().read("{\"names\":[\"admin\",\"Jack\"]}", "$.names")).containsExactly("admin", "Jack");
+        assertThat((List<String>) JsonPath.create().read("{\"names\":[\"Neil\",\"Jack\"]}", "$.names")).containsExactly("Neil", "Jack");
     }
 
 }
