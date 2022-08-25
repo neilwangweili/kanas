@@ -1,5 +1,6 @@
 package com.github.kanas.rest.domain;
 
+import com.github.kanas.core.Request;
 import org.junit.jupiter.api.Test;
 
 import static com.github.kanas.core.Testing.by;

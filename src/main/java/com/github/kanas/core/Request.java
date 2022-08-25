@@ -1,5 +1,6 @@
-package com.github.kanas.rest.domain;
+package com.github.kanas.core;
 
+import com.github.kanas.rest.domain.RestfulRequest;
 import org.jetbrains.annotations.NotNull;
 
 public interface Request {

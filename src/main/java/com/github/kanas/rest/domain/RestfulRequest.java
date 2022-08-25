@@ -1,5 +1,6 @@
 package com.github.kanas.rest.domain;
 
+import com.github.kanas.core.Request;
 import org.jetbrains.annotations.NotNull;
 
 public class RestfulRequest implements Request {
@@ -8,7 +9,7 @@ public class RestfulRequest implements Request {
     private Integer port;
     private String path;
 
-    RestfulRequest() {
+    public RestfulRequest() {
     }
 
     @Override
