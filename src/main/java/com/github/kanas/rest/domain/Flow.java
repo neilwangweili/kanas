@@ -1,10 +1,7 @@
 package com.github.kanas.rest.domain;
 
-import com.github.kanas.core.Line;
-import com.google.common.collect.Lists;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public abstract class Flow<T> {
