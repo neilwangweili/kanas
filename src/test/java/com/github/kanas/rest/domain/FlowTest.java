@@ -34,6 +34,11 @@ class FlowTest {
             assertEquals("123", new ResponseValue("{\"id\":\"123\"}", "$.id").asString().nullToEmpty().get());
         }
 
+        @Test
+        void should_trim_when_trim() {
+            assertEquals("123", new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().get());
+        }
+
     }
 
 }

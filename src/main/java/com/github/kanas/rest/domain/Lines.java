@@ -21,6 +21,10 @@ public class Lines<T> {
         return value;
     }
 
+    public void add(@NotNull final Line<T> line) {
+        this.lines.add(line);
+    }
+
     private @NotNull List<Line<T>> defaultLines() {
         return Lists.newArrayList(o -> o);
     }

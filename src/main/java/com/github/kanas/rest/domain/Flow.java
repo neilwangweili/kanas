@@ -1,5 +1,6 @@
 package com.github.kanas.rest.domain;
 
+import com.github.kanas.core.Line;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
@@ -7,7 +8,7 @@ import java.util.function.Supplier;
 public abstract class Flow<T> {
 
     private Supplier<T> nullHandler = this::defaultNullHandler;
-    private final Lines<T> lines = new Lines<T>();
+    private final Lines<T> lines = new Lines<>();
 
     private final ResponseValue responseValue;
 
@@ -28,6 +29,10 @@ public abstract class Flow<T> {
 
     public void setNullHandler(@NotNull final Supplier<T> nullHandler) {
         this.nullHandler = nullHandler;
+    }
+
+    protected void addLine(@NotNull final Line<T> line) {
+        this.lines.add(line);
     }
 
     protected abstract boolean matchType(@NotNull Class<?> underlyingType);

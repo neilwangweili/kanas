@@ -13,6 +13,11 @@ public class StringFlow extends Flow<String> {
         return this;
     }
 
+    public @NotNull StringFlow trim() {
+        addLine(String::trim);
+        return this;
+    }
+
     @Override
     protected boolean matchType(@NotNull final Class<?> underlyingType) {
         return String.class.isAssignableFrom(underlyingType);
