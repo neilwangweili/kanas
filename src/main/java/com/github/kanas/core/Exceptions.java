@@ -1,7 +1,10 @@
 package com.github.kanas.core;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface Exceptions {
-    static void execute(RunnableWithCheckedException runnable) {
+
+    static void execute(@NotNull final RunnableWithCheckedException runnable) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -9,7 +12,7 @@ public interface Exceptions {
         }
     }
 
-    static <R> R evaluate(SupplierWithCheckedException<R> supplier) {
+    static <R> R evaluate(@NotNull final SupplierWithCheckedException<R> supplier) {
         try {
             return supplier.get();
         } catch (Exception e) {
@@ -17,8 +20,9 @@ public interface Exceptions {
         }
     }
 
-    static RuntimeException wrap(Throwable throwable) {
+    static @NotNull RuntimeException wrap(final Throwable throwable) {
         if (throwable instanceof RuntimeException) return (RuntimeException) throwable;
         return new RuntimeException(throwable);
     }
+
 }

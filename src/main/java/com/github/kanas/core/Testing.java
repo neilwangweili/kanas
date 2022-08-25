@@ -1,6 +1,6 @@
 package com.github.kanas.core;
 
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
 
 public final class Testing<Content> {
 
@@ -15,7 +15,7 @@ public final class Testing<Content> {
     }
 
     @SuppressWarnings("unchecked")
-    public <Field> @Nullable Field get(@NotNull final String fieldName) {
+    public <Field> Field get(@NotNull final String fieldName) {
         java.lang.reflect.Field field = Exceptions.evaluate(() -> content.getClass().getDeclaredField(fieldName));
         field.setAccessible(true);
         return (Field) Exceptions.evaluate(() -> field.get(content));

@@ -1,7 +1,9 @@
 package com.github.kanas.rest.domain;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface Response {
 
-    ResponseValue body(String jsonPath);
+    @NotNull ResponseValue body(@NotNull String jsonPath);
 
 }
