@@ -30,7 +30,7 @@ public abstract class Flow<T> {
         return null;
     }
 
-    public void setNullHandler(@NotNull final Supplier<T> nullHandler) {
+    protected void setNullHandler(@NotNull final Supplier<T> nullHandler) {
         this.nullHandler = nullHandler;
     }
 

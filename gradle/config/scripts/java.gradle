@@ -11,10 +11,10 @@ dependencies {
     implementation libs.general.guava
     implementation libs.general.commons.lang3
     implementation libs.general.annotation
-    testImplementation libs.test.junit.jupiter
-    testImplementation libs.test.junit.jupiter.api
-    testImplementation libs.test.junit.jupiter.engine
-    testImplementation libs.test.assertj.core
+    implementation libs.test.junit.jupiter
+    implementation libs.test.junit.jupiter.api
+    implementation libs.test.junit.jupiter.engine
+    implementation libs.test.assertj.core
     testImplementation libs.test.mockito.junit.jupiter
 }
 

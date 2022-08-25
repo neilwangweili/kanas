@@ -10,18 +10,18 @@ public class Lines<T> {
 
     private final List<Line<T>> lines;
 
-    public Lines() {
+    Lines() {
         this.lines = defaultLines();
     }
 
-    public T produce(T value) {
+    T produce(T value) {
         for (Line<T> line : lines) {
             value = line.produce(value);
         }
         return value;
     }
 
-    public void add(@NotNull final Line<T> line) {
+    void add(@NotNull final Line<T> line) {
         this.lines.add(line);
     }
 

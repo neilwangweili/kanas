@@ -11,7 +11,7 @@ public class StringFlow extends Flow<String> {
     }
 
     @Override
-    public @NotNull Must<String> must() {
+    public @NotNull StringMust must() {
         return stringMust(this);
     }
 

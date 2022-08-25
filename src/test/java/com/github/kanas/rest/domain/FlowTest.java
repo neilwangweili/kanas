@@ -44,6 +44,18 @@ class FlowTest {
             assertEquals("123", new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().get());
         }
 
+        @Test
+        void should_match_min_size() {
+            assertThrows(AssertionError.class,
+                () -> new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().must().maxSize(0).get()
+            );
+        }
+
+        @Test
+        void should_match_min_size_when_size_is_good() {
+            assertEquals("123", new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().must().maxSize(3).get());
+        }
+
     }
 
 }
