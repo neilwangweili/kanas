@@ -2,7 +2,7 @@ package com.github.kanas.rest.domain;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Must<T> {
+public abstract class Must<T> {
 
     private final Flow<T> flow;
 
