@@ -1,18 +1,20 @@
 package com.github.kanas.rest.domain;
 
+import org.jetbrains.annotations.NotNull;
+
 public class StringFlow extends Flow<String> {
 
-    protected StringFlow(ResponseValue value) {
+    protected StringFlow(final ResponseValue value) {
         super(value);
     }
 
-    public StringFlow nullToEmpty() {
+    public @NotNull StringFlow nullToEmpty() {
         setNullHandler(() -> "");
         return this;
     }
 
     @Override
-    protected boolean matchType(Class<?> underlyingType) {
+    protected boolean matchType(@NotNull final Class<?> underlyingType) {
         return String.class.isAssignableFrom(underlyingType);
     }
 

@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class FlowProducingException extends IllegalArgumentException {
 
-    public FlowProducingException(@NotNull String message) {
+    public FlowProducingException(@NotNull final String message) {
         super(message);
     }
 
