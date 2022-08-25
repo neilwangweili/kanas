@@ -12,7 +12,7 @@ public class Matchers<T> {
         this.matchers = new ArrayList<>();
     }
 
-    void match(T value) {
+    void match(final T value) {
         matchers.stream().parallel().forEach(matcher -> matcher.match(value));
     }
 
