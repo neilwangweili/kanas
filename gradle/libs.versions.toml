@@ -2,7 +2,7 @@
 general-guava = "31.0.1-jre"
 general-commons-lang3 = "3.9"
 general-annotation = "20.1.0"
-general-http-client = "2.7.0"
+general-http-client = "4.5.13"
 test-junit = "5.8.2"
 test-assertj = "3.21.0"
 test-mockito = "4.0.0"

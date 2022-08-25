@@ -6,6 +6,10 @@ allprojects {
     apply from: "$rootDir/gradle/config/scripts/style.gradle"
     apply from: "$rootDir/gradle/config/scripts/coverage.gradle"
     apply from: "$rootDir/gradle/config/scripts/style-ignored.gradle"
+
+    repositories {
+        mavenCentral()
+    }
 }
 
 apply from: "$rootDir/gradle/config/scripts/coverage-all.gradle"
