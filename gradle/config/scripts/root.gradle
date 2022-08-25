@@ -12,4 +12,5 @@ apply from: "$rootDir/gradle/config/scripts/coverage-all.gradle"
 apply from: "./coverage.gradle"
 
 dependencies {
+    implementation libs.general.http.client
 }
