@@ -16,6 +16,7 @@ public abstract class Flow<T> {
         this.responseValue = responseValue;
     }
 
+    @SuppressWarnings("unchecked")
     public T get() {
         Object value = responseValue.get();
         if (value == null) return nullHandler.get();
