@@ -8,6 +8,11 @@ public class StringFlow extends Flow<String> {
         super(value);
     }
 
+    @Override
+    public @NotNull Must<String> must() {
+        return new Must<>(this);
+    }
+
     public @NotNull StringFlow nullToEmpty() {
         setNullHandler(() -> "");
         return this;

@@ -16,9 +16,7 @@ public abstract class Flow<T> {
         this.responseValue = responseValue;
     }
 
-    public @NotNull Must<T> must() {
-        return new Must<>(this);
-    }
+    public abstract @NotNull Must<T> must();
 
     @SuppressWarnings("unchecked")
     public T get() {
