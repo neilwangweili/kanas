@@ -47,11 +47,7 @@ class RestfulResponseTest {
         void should_response_as_string_and_get() {
             RestfulResponse response = new RestfulResponse("{\"name\":\"Neil\"}");
             assertNotNull(response.body("$.name").asString().get());
-        }
-
-        @Test
-        void should_() {
-
+            assertEquals("Neil", response.body("$.name").asString().get());
         }
 
     }

@@ -21,4 +21,14 @@ class StringFlowTest {
         assertThrows(FlowProducingException.class, () -> new ResponseValue("{\"id\":123}", "$.id").asString().get());
     }
 
+    @Test
+    void should_null_to_empty_when_nullToEmpty() {
+        assertEquals("", new ResponseValue("{}", "$.id").asString().nullToEmpty().get());
+    }
+
+    @Test
+    void should_do_nothing_when_nullToEmpty() {
+        assertEquals("123", new ResponseValue("{\"id\":\"123\"}", "$.id").asString().nullToEmpty().get());
+    }
+
 }
