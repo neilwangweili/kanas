@@ -17,4 +17,5 @@ apply from: "./coverage.gradle"
 
 dependencies {
     implementation libs.general.http.client
+    implementation libs.general.json.path
 }
