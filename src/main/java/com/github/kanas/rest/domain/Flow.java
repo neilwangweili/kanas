@@ -16,6 +16,10 @@ public abstract class Flow<T> {
         this.responseValue = responseValue;
     }
 
+    public @NotNull Must<T> must() {
+        return new Must<>(this);
+    }
+
     @SuppressWarnings("unchecked")
     public T get() {
         Object value = responseValue.get();

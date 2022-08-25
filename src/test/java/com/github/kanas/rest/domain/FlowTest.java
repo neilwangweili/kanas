@@ -17,6 +17,11 @@ class FlowTest {
     }
 
     @Test
+    void should_produce_with_must() {
+        assertEquals("abc", new ResponseValue("{\"id\":\"abc\"}", "$.id").asString().must().get());
+    }
+
+    @Test
     void should_throw_exception_when_not_cast_type() {
         assertThrows(FlowProducingException.class, () -> new ResponseValue("{\"id\":123}", "$.id").asString().get());
     }
