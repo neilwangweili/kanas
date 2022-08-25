@@ -6,4 +6,9 @@ public class StringFlow extends Flow<String> {
         super(value);
     }
 
+    @Override
+    protected boolean matchType(Class<?> underlyingType) {
+        return String.class.isAssignableFrom(underlyingType);
+    }
+
 }
