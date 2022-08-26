@@ -6,7 +6,7 @@ import static com.github.kanas.rest.domain.MustCreator.stringMust;
 
 public class StringFlow extends Flow<String> {
 
-    protected StringFlow(final ResponseValue value) {
+    protected StringFlow(final Object value) {
         super(value);
     }
 

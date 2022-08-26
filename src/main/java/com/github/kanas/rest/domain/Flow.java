@@ -10,18 +10,15 @@ public abstract class Flow<T> {
     private Supplier<T> nullHandler = this::defaultNullHandler;
     private final Lines<T> lines = new Lines<>();
 
-    private final ResponseValue responseValue;
+    private final Object value;
 
-    protected Flow(@NotNull final ResponseValue responseValue) {
-        this.responseValue = responseValue;
+    protected Flow(final Object value) {
+        this.value = value;
     }
-
-    public abstract @NotNull Must<T> must();
 
     @SuppressWarnings("unchecked")
     public T get() {
-        Object value = responseValue.get();
-        if (value == null) return nullHandler.get();
+        if (this.value == null) return nullHandler.get();
         if (!matchType(value.getClass())) throw new FlowProducingException("Error, type is mismatch.");
         return lines.produce((T) value);
     }
@@ -42,6 +39,8 @@ public abstract class Flow<T> {
     protected void addLine(@NotNull final Line<T> line) {
         this.lines.add(line);
     }
+
+    public abstract @NotNull Must<T> must();
 
     protected abstract boolean matchType(@NotNull Class<?> underlyingType);
 

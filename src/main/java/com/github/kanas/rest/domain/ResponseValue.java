@@ -11,7 +11,7 @@ public final class ResponseValue {
     }
 
     public @NotNull StringFlow asString() {
-        return FlowCreator.asString(this);
+        return FlowCreator.asString(this.value);
     }
 
     public Object get() {

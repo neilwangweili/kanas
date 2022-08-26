@@ -2,33 +2,34 @@ package com.github.kanas.rest.domain;
 
 import org.junit.jupiter.api.*;
 
+import static com.github.kanas.rest.domain.FlowCreator.asString;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlowTest {
 
     @Test
     void should_produce_null_to_null() {
-        assertNull(new ResponseValue("{}", "$.id").asString().get());
+        assertNull(asString(null).get());
     }
 
     @Test
     void should_not_produce_not_null() {
-        assertEquals("abc", new ResponseValue("{\"id\":\"abc\"}", "$.id").asString().get());
+        assertEquals("abc", asString("abc").get());
     }
 
     @Test
     void should_produce_with_must() {
-        assertEquals("abc", new ResponseValue("{\"id\":\"abc\"}", "$.id").asString().must().get());
+        assertEquals("abc", asString("abc").must().get());
     }
 
     @Test
     void should_throw_exception_when_not_cast_type() {
-        assertThrows(FlowProducingException.class, () -> new ResponseValue("{\"id\":123}", "$.id").asString().get());
+        assertThrows(FlowProducingException.class, () -> asString(123).get());
     }
 
     @Test
     void should_produce_null_to_expect() {
-        assertEquals("abc", new ResponseValue("{}", "$.id").asString().nullTo("abc").get());
+        assertEquals("abc", asString(null).nullTo("abc").get());
     }
 
     @Nested
@@ -36,29 +37,29 @@ class FlowTest {
 
         @Test
         void should_null_to_empty_when_nullToEmpty() {
-            assertEquals("", new ResponseValue("{}", "$.id").asString().nullToEmpty().get());
+            assertEquals("", asString(null).nullToEmpty().get());
         }
 
         @Test
         void should_do_nothing_when_nullToEmpty() {
-            assertEquals("123", new ResponseValue("{\"id\":\"123\"}", "$.id").asString().nullToEmpty().get());
+            assertEquals("123", asString("123").nullToEmpty().get());
         }
 
         @Test
         void should_trim_when_trim() {
-            assertEquals("123", new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().get());
+            assertEquals("123", asString("     123    ").trim().get());
         }
 
         @Test
         void should_match_min_size() {
             assertThrows(AssertionError.class,
-                () -> new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().must().maxSize(0).get()
+                () -> asString("     123    ").trim().must().maxSize(0).get()
             );
         }
 
         @Test
         void should_match_min_size_when_size_is_good() {
-            assertEquals("123", new ResponseValue("{\"id\":\"   123   \"}", "$.id").asString().trim().must().maxSize(3).get());
+            assertEquals("123", asString("     123    ").trim().must().maxSize(3).get());
         }
 
     }

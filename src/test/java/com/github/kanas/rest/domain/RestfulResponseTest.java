@@ -20,6 +20,12 @@ class RestfulResponseTest {
         }
 
         @Test
+        void should_get_response_value_directly() {
+            RestfulResponse response = new RestfulResponse("{}");
+            assertNull(response.body("$.id").get());
+        }
+
+        @Test
         void should_get_response_value_when_giving_response_path() {
             RestfulResponse response = new RestfulResponse("{\"name\":\"Neil\"}");
             assertEquals("Neil", by(response.body("$.name")).get("value"));
