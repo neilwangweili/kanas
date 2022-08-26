@@ -26,6 +26,11 @@ class FlowTest {
         assertThrows(FlowProducingException.class, () -> new ResponseValue("{\"id\":123}", "$.id").asString().get());
     }
 
+    @Test
+    void should_produce_null_to_expect() {
+        assertEquals("abc", new ResponseValue("{}", "$.id").asString().nullTo("abc").get());
+    }
+
     @Nested
     class StringFlowTest {
 

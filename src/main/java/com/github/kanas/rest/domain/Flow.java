@@ -26,6 +26,11 @@ public abstract class Flow<T> {
         return lines.produce((T) value);
     }
 
+    public @NotNull Flow<T> nullTo(@NotNull final T element) {
+        this.setNullHandler(() -> element);
+        return this;
+    }
+
     protected T defaultNullHandler() {
         return null;
     }
