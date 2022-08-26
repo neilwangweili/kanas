@@ -26,7 +26,7 @@ public class Lines<T> {
     }
 
     private @NotNull List<Line<T>> defaultLines() {
-        return Lists.newArrayList(o -> o);
+        return Lists.newArrayList();
     }
 
 }
