@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+set -e;
+./gradlew --parallel --warning-mode none -P chainTests clean check --no-build-cache

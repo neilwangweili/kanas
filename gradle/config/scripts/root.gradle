@@ -1,4 +1,4 @@
-group = 'com.github.kanas'
+group = 'io.github.neilwangweili'
 version = '1.0.0'
 
 allprojects {
