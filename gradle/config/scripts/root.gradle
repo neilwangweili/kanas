@@ -13,6 +13,7 @@ allprojects {
 }
 
 apply from: "$rootDir/gradle/config/scripts/coverage-all.gradle"
+apply from: "$rootDir/gradle/config/scripts/publish.gradle"
 apply from: "./coverage.gradle"
 
 dependencies {

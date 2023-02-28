@@ -1,0 +1,72 @@
+plugins {
+    id "maven-publish"
+    id "signing"
+    id "java"
+    id "java-library"
+}
+
+group = 'io.github.neilwangweili'
+version '1.0.0'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+javadoc {
+    options.addStringOption("charset", "UTF-8")
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = "kanas"
+            from components.java
+            pom {
+                name = "epiphany"
+                description = "KANAS is an easy setup stub framework."
+                url = "https://github.com/neilwangweili/kanas"
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/license/LICENSE-2.0.txt'
+                        distribution = 'repo'
+                    }
+                }
+                developers {
+                    developer {
+                        id = "neilwangweili"
+                        name = "Neil Wang"
+                        email = "wangweili457@gmail.com"
+                    }
+                }
+                scm {
+                    connection = "https://github.com/neilwangweili/kanas.git"
+                    developerConnection = "https://github.com/neilwangweili/kanas.git"
+                    url = "https://github.com/neilwangweili/kanas"
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            if (project.version.toString().endsWith("-SNAPSHOT")) {
+                url = "https://s01.oss.sonatype.org/content/repositories/snapshots"
+            } else {
+                url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            }
+            credentials {
+                username = System.getenv("OSSRH_USERNAME")
+                password = System.getenv("OSSRH_PASSWORD")
+            }
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications.mavenJava)
+}
