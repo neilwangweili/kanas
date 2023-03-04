@@ -21,7 +21,7 @@ publishing {
             artifactId = "kanas"
             from components.java
             pom {
-                name = "epiphany"
+                name = "kanas"
                 description = "KANAS is an easy setup stub framework."
                 url = "https://github.com/neilwangweili/kanas"
                 licenses {
