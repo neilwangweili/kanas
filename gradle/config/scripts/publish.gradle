@@ -26,8 +26,8 @@ publishing {
                 url = "https://github.com/neilwangweili/kanas"
                 licenses {
                     license {
-                        name = 'The Apache Software License, Version 2.0'
-                        url = 'http://www.apache.org/license/LICENSE-2.0.txt'
+                        name = "MIT LICENSE"
+                        url = "https://opensource.org/license/mit/"
                         distribution = 'repo'
                     }
                 }
